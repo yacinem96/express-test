@@ -1,0 +1,16 @@
+<div class="container p-5">
+  <h1 class="text-center"><%= title%></h1>
+  <% if(!postsList || postsList.length===0){ %>
+  <div class="alert alert-danger">No posts to show</div>
+  <% }else{ %> <% postsList.forEach(element=>{ %>
+  <div class="card mt-5">
+    <div class="card-body">
+      <h3 class="card-title"><%= element.title %></h3>
+      <p class="card-text"><%= element.body %></p>
+      <a href="/posts/<%=element.id %>" class="btn btn-primary" target="_blank"
+        >Read More</a
+      >
+    </div>
+  </div>
+  <% }) %> <% } %>
+</div>
